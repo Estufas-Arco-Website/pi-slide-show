@@ -9,6 +9,12 @@ screen = pygame.display.set_mode((infoObject.current_w, infoObject.current_h), p
 documents_path = "/home/pi/Documents/"
 media_files = [os.path.join(documents_path, f) for f in os.listdir(documents_path) if os.path.isfile(os.path.join(documents_path, f)) and f.lower().endswith(('png', 'jpg', 'jpeg'))]
 
+# Check if media_files list is empty and print a message if it is
+if not media_files:
+    print(f"No image files found in the directory: {documents_path}")
+else:
+    print(f"Found {len(media_files)} media files in the directory: {documents_path}")
+
 def display_image(file_path):
     try:
         img = pygame.image.load(file_path)
