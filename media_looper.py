@@ -6,7 +6,7 @@ pygame.init()
 infoObject = pygame.display.Info()
 screen = pygame.display.set_mode((infoObject.current_w, infoObject.current_h), pygame.FULLSCREEN)
 
-documents_path = "/home/pi/Documents/"
+documents_path = "/home/david/Documents/"
 media_files = [os.path.join(documents_path, f) for f in os.listdir(documents_path) if os.path.isfile(os.path.join(documents_path, f)) and f.lower().endswith(('png', 'jpg', 'jpeg'))]
 
 # Check if media_files list is empty and print a message if it is
