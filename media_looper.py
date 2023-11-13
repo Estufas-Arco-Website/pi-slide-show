@@ -20,18 +20,17 @@ def display_image(file_path):
         screen_ratio = infoObject.current_w / infoObject.current_h
 
         if img_ratio > screen_ratio:
-            # Scale based on width
             scaled_width = infoObject.current_w
             scaled_height = scaled_width / img_ratio
         else:
-            # Scale based on height
             scaled_height = infoObject.current_h
             scaled_width = scaled_height * img_ratio
 
         img = pygame.transform.scale(img, (int(scaled_width), int(scaled_height)))
-        x = (infoObject.current_w - scaled_width) / 2  # Center horizontally
-        y = (infoObject.current_h - scaled_height) / 2  # Center vertically
+        x = int((infoObject.current_w - scaled_width) / 2)  # Center horizontally
+        y = int((infoObject.current_h - scaled_height) / 2)  # Center vertically
 
+        screen.fill((0, 0, 0))  # Clear the screen
         screen.blit(img, (x, y))
         pygame.display.update()
         sleep(5)  # Adjust the sleep time as needed
