@@ -37,13 +37,15 @@ def display_image(file_path):
     except Exception as e:
         print(f"An error occurred while displaying image: {e}")
 
-# Function to play video
 def play_video(file_path):
     try:
-        command = f'omxplayer --win "0 0 {infoObject.current_w} {infoObject.current_h}" "{file_path}"'
+        # VLC command modified to hide on-screen information and speed up start time
+        command = f'cvlc --fullscreen --play-and-exit --no-osd --no-video-title-show "{file_path}"'
         subprocess.run(command, shell=True)
     except Exception as e:
         print(f"An error occurred while playing video: {e}")
+
+
 
 # Main loop
 while True:
