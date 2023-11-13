@@ -8,7 +8,7 @@ pygame.init()
 infoObject = pygame.display.Info()
 screen = pygame.display.set_mode((infoObject.current_w, infoObject.current_h), pygame.FULLSCREEN)
 
-# Path to your media files
+# Path to your media file
 documents_path = "/home/david/Documents/"
 media_files = [os.path.join(documents_path, f) for f in os.listdir(documents_path) if os.path.isfile(os.path.join(documents_path, f)) and f.lower().endswith(('png', 'jpg', 'jpeg', 'mp4', 'avi', 'mov'))]
 
